@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Teacher Management | AMS</title>
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-management.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                AMS
+            </div>
+
+            <div>
+                <h2>Attendance</h2>
+                <span>MANAGEMENT SYSTEM</span>
+            </div>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <span>
+                Teacher Management
+            </span>
+
+            <button id="backBtn">
+                ← Dashboard
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="container">
+
+        <!-- PAGE HEADER -->
+
+        <section class="page-header">
+
+            <span class="section-tag">
+                ADMIN PANEL
+            </span>
+
+            <h1>
+                Teacher Management
+            </h1>
+
+            <p>
+                Add, view and manage teacher accounts.
+            </p>
+
+        </section>
+
+
+
+        <!-- ADD TEACHER -->
+
+        <section class="form-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-tag">
+                        ADD TEACHER
+                    </span>
+
+                    <h2>
+                        Create Teacher Account
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <form id="teacherForm">
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Teacher Code *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="teacherCode"
+                            placeholder="Example: TCH003"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Teacher Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="teacherName"
+                            placeholder="Enter teacher name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="teacher@example.com"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone
+                        </label>
+
+                        <input
+                            type="text"
+                            id="phone"
+                            placeholder="Phone number"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Department
+                        </label>
+
+                        <input
+                            type="text"
+                            id="department"
+                            placeholder="Computer Science and Engineering"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Username *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="username"
+                            placeholder="Login username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Password *
+                        </label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Login password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="formMessage"
+                    class="form-message"
+                ></div>
+
+
+                <button
+                    type="submit"
+                    id="addTeacherBtn"
+                    class="primary-btn"
+                >
+                    Add Teacher →
+                </button>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- TEACHER LIST -->
+
+        <section class="teachers-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-tag">
+                        TEACHERS
+                    </span>
+
+                    <h2>
+                        All Teachers
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="refreshBtn"
+                    class="secondary-btn"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Teacher Code</th>
+
+                            <th>Name</th>
+
+                            <th>Email</th>
+
+                            <th>Phone</th>
+
+                            <th>Department</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="teacherTable">
+
+                        <tr>
+
+                            <td
+                                colspan="7"
+                                class="loading"
+                            >
+                                Loading teachers...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/teacher-management.js"></script>
+
+</body>
+
+</html>

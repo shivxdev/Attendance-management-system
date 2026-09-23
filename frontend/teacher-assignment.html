@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Teacher Assignment | Attendance Management System</title>
+
+    <link
+        rel="stylesheet"
+        href="css/teacher-assignment.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                AMS
+            </div>
+
+            <div>
+                <h2>Attendance</h2>
+                <span>MANAGEMENT SYSTEM</span>
+            </div>
+
+        </div>
+
+
+        <div class="admin-profile">
+
+            <div class="admin-info">
+
+                <span>
+                    Administrator
+                </span>
+
+                <strong id="adminName">
+                    Admin
+                </strong>
+
+            </div>
+
+            <button
+                id="backBtn"
+                class="back-btn"
+            >
+                ← Dashboard
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="container">
+
+
+        <!-- =====================================
+             HEADER
+        ====================================== -->
+
+        <section class="page-header">
+
+            <span class="section-tag">
+                SYSTEM MANAGEMENT
+            </span>
+
+            <h1>
+                Teacher Assignment
+            </h1>
+
+            <p>
+                Assign teachers to specific classes
+                and subjects.
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ASSIGNMENT FORM
+        ====================================== -->
+
+        <section class="assignment-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="section-tag">
+                        NEW ASSIGNMENT
+                    </span>
+
+                    <h2>
+                        Assign Teacher
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <form id="assignmentForm">
+
+
+                <!-- TEACHER -->
+
+                <div class="form-group">
+
+                    <label for="teacherSelect">
+                        Teacher
+                    </label>
+
+                    <select
+                        id="teacherSelect"
+                        required
+                    >
+
+                        <option value="">
+                            Select Teacher
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- CLASS -->
+
+                <div class="form-group">
+
+                    <label for="classSelect">
+                        Class
+                    </label>
+
+                    <select
+                        id="classSelect"
+                        required
+                    >
+
+                        <option value="">
+                            Select Class
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="subjectSelect">
+                        Subject
+                    </label>
+
+                    <select
+                        id="subjectSelect"
+                        required
+                    >
+
+                        <option value="">
+                            Select Subject
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    id="assignBtn"
+                    class="primary-btn"
+                >
+                    Assign Teacher →
+                </button>
+
+
+                <p
+                    id="formMessage"
+                    class="form-message"
+                ></p>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =====================================
+             CURRENT ASSIGNMENTS
+        ====================================== -->
+
+        <section class="assignments-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-tag">
+                        CURRENT ASSIGNMENTS
+                    </span>
+
+                    <h2>
+                        Assigned Teachers
+                    </h2>
+
+                </div>
+
+                <button
+                    id="refreshBtn"
+                    class="refresh-btn"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Teacher
+                            </th>
+
+                            <th>
+                                Teacher Code
+                            </th>
+
+                            <th>
+                                Class
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="assignmentTable">
+
+                        <tr>
+
+                            <td
+                                colspan="5"
+                                class="loading"
+                            >
+                                Loading assignments...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="js/teacher-assignment.js"></script>
+
+</body>
+
+</html>

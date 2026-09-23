@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Attendance Overview | AMS</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-attendance.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                AMS
+            </div>
+
+            <div class="brand-text">
+
+                <h2>Attendance</h2>
+
+                <span>
+                    MANAGEMENT SYSTEM
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="nav-right">
+
+            <button
+                id="backBtn"
+                class="back-btn"
+            >
+                ← Dashboard
+            </button>
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="container">
+
+
+        <!-- =====================================
+             PAGE HEADER
+        ====================================== -->
+
+        <section class="page-header">
+
+            <div>
+
+                <span class="section-tag">
+                    ADMIN PANEL
+                </span>
+
+                <h1>
+                    Attendance Overview
+                </h1>
+
+                <p>
+                    Monitor attendance across classes,
+                    subjects and students.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             SUMMARY CARDS
+        ====================================== -->
+
+        <section class="summary-grid">
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Lectures
+                    </span>
+
+                    <strong id="totalLectures">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+
+                    <span>
+                        Students
+                    </span>
+
+                    <strong id="totalStudents">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    ✅
+                </div>
+
+                <div>
+
+                    <span>
+                        Present
+                    </span>
+
+                    <strong id="totalPresent">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    ❌
+                </div>
+
+                <div>
+
+                    <span>
+                        Absent
+                    </span>
+
+                    <strong id="totalAbsent">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="summary-card highlight-card">
+
+                <div class="summary-icon">
+                    📊
+                </div>
+
+                <div>
+
+                    <span>
+                        Overall Attendance
+                    </span>
+
+                    <strong id="overallAttendance">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             FILTERS
+        ====================================== -->
+
+        <section class="filter-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-tag">
+                        FILTER
+                    </span>
+
+                    <h2>
+                        Attendance Records
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="filters">
+
+                <div class="filter-group">
+
+                    <label for="classFilter">
+                        Class
+                    </label>
+
+                    <select id="classFilter">
+
+                        <option value="">
+                            All Classes
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label for="subjectFilter">
+                        Subject
+                    </label>
+
+                    <select id="subjectFilter">
+
+                        <option value="">
+                            All Subjects
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <button
+                    id="refreshBtn"
+                    class="refresh-btn"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ATTENDANCE TABLE
+        ====================================== -->
+
+        <section class="table-section">
+
+            <div class="table-header">
+
+                <div>
+
+                    <span class="section-tag">
+                        RECORDS
+                    </span>
+
+                    <h2>
+                        Attendance Details
+                    </h2>
+
+                </div>
+
+                <span
+                    id="recordCount"
+                    class="record-count"
+                >
+                    0 records
+                </span>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Class
+                            </th>
+
+                            <th>
+                                Subject
+                            </th>
+
+                            <th>
+                                Lectures
+                            </th>
+
+                            <th>
+                                Present
+                            </th>
+
+                            <th>
+                                Absent
+                            </th>
+
+                            <th>
+                                Attendance
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="attendanceTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="6"
+                                class="loading"
+                            >
+                                Loading attendance data...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/admin-attendance.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Student Dashboard - Attendance Management System"
+    >
+
+    <title>Student Dashboard | Attendance Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/student-dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         NAVBAR
+    =========================================== -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo-icon">
+                    AMS
+                </div>
+
+                <div class="logo-text">
+
+                    <span>Attendance</span>
+
+                    <small>
+                        Management System
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <div class="dashboard-user">
+
+                <strong id="studentName">
+                    Student
+                </strong>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         MAIN DASHBOARD
+    =========================================== -->
+
+    <main class="student-dashboard">
+
+        <div class="container">
+
+
+            <!-- ==================================
+                 WELCOME
+            =================================== -->
+
+            <section class="welcome-section">
+
+                <span class="dashboard-badge">
+                    STUDENT DASHBOARD
+                </span>
+
+                <h1>
+                    Welcome,
+                    <span id="userName">
+                        Student
+                    </span>
+                </h1>
+
+                <p>
+                    Here's your attendance overview and
+                    academic information.
+                </p>
+
+            </section>
+
+
+            <!-- ==================================
+                 STUDENT INFORMATION
+            =================================== -->
+
+            <section class="student-info-card">
+
+                <div class="student-info-item">
+
+                    <span>
+                        University Roll No.
+                    </span>
+
+                    <strong id="rollNo">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="student-info-item">
+
+                    <span>
+                        Branch
+                    </span>
+
+                    <strong id="branch">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="student-info-item">
+
+                    <span>
+                        Section
+                    </span>
+
+                    <strong id="section">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="student-info-item">
+
+                    <span>
+                        Semester
+                    </span>
+
+                    <strong id="semester">
+                        -
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 ATTENDANCE SUMMARY
+            =================================== -->
+
+            <section class="attendance-summary">
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        %
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Overall Attendance
+                        </span>
+
+                        <strong id="overallAttendance">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Present Lectures
+                        </span>
+
+                        <strong id="presentLectures">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        ×
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Absent Lectures
+                        </span>
+
+                        <strong id="absentLectures">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        #
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Lectures
+                        </span>
+
+                        <strong id="totalLectures">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 ATTENDANCE STATUS
+            =================================== -->
+
+            <section class="attendance-status-card">
+
+                <div>
+
+                    <span class="dashboard-badge">
+                        ATTENDANCE STATUS
+                    </span>
+
+                    <h2>
+                        Your Attendance
+                    </h2>
+
+                    <p id="attendanceStatusText">
+                        Loading attendance status...
+                    </p>
+
+                </div>
+
+
+                <div class="attendance-progress">
+
+                    <div class="progress-header">
+
+                        <span>
+                            Overall Progress
+                        </span>
+
+                        <strong id="progressPercentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress-track">
+
+                        <div
+                            class="progress-fill"
+                            id="progressFill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 SUBJECT-WISE ATTENDANCE
+            =================================== -->
+
+            <section class="subject-section">
+
+                <div class="section-header">
+
+                    <span class="dashboard-badge">
+                        ATTENDANCE
+                    </span>
+
+                    <h2>
+                        Subject-wise Attendance
+                    </h2>
+
+                    <p>
+                        Track your attendance for each subject.
+                    </p>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Subject
+                                </th>
+
+                                <th>
+                                    Total Lectures
+                                </th>
+
+                                <th>
+                                    Present
+                                </th>
+
+                                <th>
+                                    Absent
+                                </th>
+
+                                <th>
+                                    Attendance
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="attendanceTable">
+
+                            <tr>
+
+                                <td colspan="5">
+                                    Loading attendance...
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 FOOTER NOTE
+            =================================== -->
+
+            <section class="dashboard-note">
+
+                <span>
+                    AMS
+                </span>
+
+                <p>
+                    Attendance records are updated automatically
+                    after your teacher submits attendance.
+                </p>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <script src="js/student.js"></script>
+
+</body>
+
+</html>

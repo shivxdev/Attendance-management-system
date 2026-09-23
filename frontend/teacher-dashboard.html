@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Teacher Dashboard - Attendance Management System"
+    >
+
+    <title>Teacher Dashboard | Attendance Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/teacher-dashboard.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <a href="index.html" class="logo">
+
+                <div class="logo-icon">
+                    AMS
+                </div>
+
+                <div class="logo-text">
+                    <span>Attendance</span>
+                    <small>Management System</small>
+                </div>
+
+            </a>
+
+
+            <div class="dashboard-user">
+
+                <span id="teacherName">
+                    Teacher
+                </span>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         TEACHER DASHBOARD
+    ========================== -->
+
+    <main class="teacher-dashboard">
+
+        <div class="container">
+
+
+            <!-- WELCOME -->
+
+            <section class="welcome-section">
+
+                <span class="dashboard-badge">
+                    TEACHER DASHBOARD
+                </span>
+
+                <h1>
+                    Welcome,
+                    <span id="welcomeTeacherName">
+                        Teacher
+                    </span>
+                </h1>
+
+                <p>
+                    Manage your classes, lectures and student attendance.
+                </p>
+
+            </section>
+
+
+            <!-- =========================
+                 TEACHER INFORMATION
+            ========================== -->
+
+            <section class="teacher-info-card">
+
+                <div class="info-item">
+
+                    <span>Teacher Code</span>
+
+                    <strong id="teacherCode">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span>Department</span>
+
+                    <strong id="department">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span>Assigned Class</span>
+
+                    <strong id="classId">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="info-item">
+
+                    <span>Subject</span>
+
+                    <strong id="subjectName">
+                        -
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 ACTION SECTION
+            ========================== -->
+
+            <section class="teacher-actions">
+
+                <div class="action-header">
+
+                    <div>
+
+                        <span class="dashboard-badge">
+                            ATTENDANCE MANAGEMENT
+                        </span>
+
+                        <h2>
+                            Manage Attendance
+                        </h2>
+
+                        <p>
+                            Create a lecture and mark attendance for your students.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="action-grid">
+
+
+                    <!-- CREATE LECTURE -->
+
+                    <div class="action-card">
+
+                        <div class="action-icon">
+                            +
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Create Lecture
+                            </h3>
+
+                            <p>
+                                Start a new attendance session.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="createLectureBtn"
+                        >
+                            Create Lecture →
+                        </button>
+
+                    </div>
+
+
+                    <!-- MARK ATTENDANCE -->
+
+                    <div class="action-card">
+
+                        <div class="action-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Mark Attendance
+                            </h3>
+
+                            <p>
+                                Mark students as Present or Absent.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="markAttendanceBtn"
+                        >
+                            Mark Attendance →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 LECTURE SECTION
+            ========================== -->
+
+            <section
+                class="lecture-section"
+                id="lectureSection"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="dashboard-badge">
+                            CURRENT LECTURE
+                        </span>
+
+                        <h2>
+                            Attendance Session
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="lecture-card">
+
+                    <div class="lecture-details">
+
+                        <div>
+                            <span>Subject</span>
+                            <strong id="lectureSubject">
+                                -
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Date</span>
+                            <strong id="lectureDate">
+                                -
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>Lecture No.</span>
+                            <strong id="lectureNumber">
+                                -
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="lectureMessage"
+                        class="lecture-message"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 STUDENT ATTENDANCE
+            ========================== -->
+
+            <section
+                class="students-section"
+                id="studentsSection"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="dashboard-badge">
+                            STUDENTS
+                        </span>
+
+                        <h2>
+                            Mark Student Attendance
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Roll No.</th>
+
+                                <th>Student Name</th>
+
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="studentTable">
+
+                            <tr>
+
+                                <td colspan="3">
+                                    Create a lecture to load students.
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="attendance-actions">
+
+                    <button
+                        type="button"
+                        id="saveAttendanceBtn"
+                    >
+                        Save Attendance
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/teacher.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,345 @@
+/* ==========================================
+   ATTENDANCE MANAGEMENT SYSTEM
+   STUDENT DASHBOARD
+========================================== */
+
+.dashboard-page {
+    min-height: calc(100vh - 80px);
+    padding: 60px 0 80px;
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(80, 120, 255, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(0, 220, 180, 0.08),
+            transparent 30%
+        );
+}
+
+
+/* ==========================================
+   DASHBOARD USER
+========================================== */
+
+.dashboard-user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dashboard-user span {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.dashboard-user button {
+    padding: 9px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dashboard-user button:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ==========================================
+   WELCOME SECTION
+========================================== */
+
+.welcome-section {
+    margin-bottom: 40px;
+}
+
+.dashboard-badge {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    color: #8ea7ff;
+
+    background: rgba(100, 120, 255, 0.1);
+
+    border: 1px solid rgba(100, 120, 255, 0.2);
+}
+
+.welcome-section h1 {
+    margin: 18px 0 10px;
+
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+}
+
+.welcome-section h1 span {
+    background: linear-gradient(
+        90deg,
+        #7c8cff,
+        #53e6c5
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.welcome-section p {
+    color: #999;
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   STUDENT INFORMATION
+========================================== */
+
+.student-info-card {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 1px;
+
+    margin-bottom: 25px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(15px);
+}
+
+.info-item {
+    padding: 24px;
+
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.info-item span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+
+    color: #888;
+}
+
+.info-item strong {
+    font-size: 16px;
+
+    color: #fff;
+}
+
+
+/* ==========================================
+   DASHBOARD CARDS
+========================================== */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 45px;
+}
+
+.dashboard-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(120, 140, 255, 0.35);
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    background: rgba(120, 140, 255, 0.12);
+
+    color: #91a0ff;
+}
+
+.dashboard-card span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+.dashboard-card strong {
+    font-size: 26px;
+}
+
+
+/* ==========================================
+   ATTENDANCE SECTION
+========================================== */
+
+.attendance-section {
+    margin-top: 20px;
+}
+
+.section-header {
+    margin-bottom: 22px;
+}
+
+.section-header h2 {
+    margin-top: 12px;
+
+    font-size: 26px;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(15px);
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 650px;
+}
+
+thead {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+th,
+td {
+    padding: 18px 20px;
+
+    text-align: left;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.06);
+}
+
+th {
+    font-size: 12px;
+
+    color: #888;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+td {
+    font-size: 14px;
+
+    color: #ddd;
+}
+
+tbody tr {
+    transition: 0.25s;
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.035);
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 1000px) {
+
+    .dashboard-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .student-info-card {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .dashboard-page {
+        padding: 40px 0;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .student-info-card {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-user span {
+        display: none;
+    }
+
+}

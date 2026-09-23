@@ -1,0 +1,601 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #172554,
+            transparent 35%
+        ),
+        #050816;
+
+    color: #f8fafc;
+}
+
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar {
+    min-height: 80px;
+
+    padding: 18px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        rgba(5,8,22,0.75);
+
+    backdrop-filter: blur(16px);
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.brand-logo {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    font-weight: 800;
+}
+
+
+.brand h2 {
+    font-size: 18px;
+}
+
+
+.brand span {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #94a3b8;
+}
+
+
+.admin-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.admin-info {
+    text-align: right;
+}
+
+
+.profile-label {
+    display: block;
+
+    font-size: 11px;
+
+    color: #64748b;
+}
+
+
+.admin-info strong {
+    font-size: 14px;
+}
+
+
+.back-btn,
+.logout-btn {
+    border: 1px solid
+        rgba(255,255,255,0.1);
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color: #fff;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.back-btn:hover,
+.logout-btn:hover {
+    background:
+        rgba(255,255,255,0.1);
+}
+
+
+.logout-btn {
+    border-color:
+        rgba(239,68,68,0.35);
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container {
+    width: min(1200px, 90%);
+
+    margin: 0 auto;
+
+    padding: 50px 0 70px;
+}
+
+
+/* ==========================================
+   PAGE HEADER
+========================================== */
+
+.page-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 30px;
+
+    margin-bottom: 35px;
+}
+
+
+.section-tag {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #60a5fa;
+
+    font-weight: 700;
+}
+
+
+.page-header h1 {
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+
+.page-header p {
+    color: #94a3b8;
+
+    font-size: 15px;
+}
+
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.primary-btn {
+    border: none;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    color: white;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.95;
+}
+
+
+.secondary-btn {
+    border: 1px solid
+        rgba(255,255,255,0.12);
+
+    padding: 11px 17px;
+
+    border-radius: 9px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+.secondary-btn:hover {
+    background:
+        rgba(255,255,255,0.09);
+}
+
+
+.close-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   FORM SECTION
+========================================== */
+
+.form-section,
+.students-section {
+    border: 1px solid
+        rgba(255,255,255,0.08);
+
+    background:
+        rgba(15,23,42,0.65);
+
+    backdrop-filter: blur(16px);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    margin-bottom: 30px;
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,0.25);
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+}
+
+
+.section-heading h2 {
+    font-size: 23px;
+}
+
+
+/* ==========================================
+   FORM GRID
+========================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.form-group label {
+    font-size: 13px;
+
+    color: #cbd5e1;
+
+    font-weight: 600;
+}
+
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border-radius: 9px;
+
+    border: 1px solid
+        rgba(255,255,255,0.1);
+
+    outline: none;
+
+    background:
+        rgba(2,6,23,0.75);
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3b82f6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(59,130,246,0.12);
+}
+
+
+.form-group select option {
+    background: #0f172a;
+
+    color: white;
+}
+
+
+/* ==========================================
+   FORM ACTIONS
+========================================== */
+
+.form-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 25px;
+}
+
+
+.form-message {
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    min-height: 18px;
+}
+
+
+.form-message.success {
+    color: #4ade80;
+}
+
+
+.form-message.error {
+    color: #f87171;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 900px;
+}
+
+
+thead {
+    background:
+        rgba(255,255,255,0.04);
+}
+
+
+th,
+td {
+    padding: 15px 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid
+        rgba(255,255,255,0.07);
+
+    font-size: 13px;
+}
+
+
+th {
+    color: #94a3b8;
+
+    font-size: 11px;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+td {
+    color: #e2e8f0;
+}
+
+
+tbody tr:hover {
+    background:
+        rgba(255,255,255,0.025);
+}
+
+
+/* ==========================================
+   DELETE BUTTON
+========================================== */
+
+.delete-btn {
+    border: 1px solid
+        rgba(239,68,68,0.3);
+
+    background:
+        rgba(239,68,68,0.08);
+
+    color: #f87171;
+
+    padding: 7px 12px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+
+.delete-btn:hover {
+    background:
+        rgba(239,68,68,0.16);
+}
+
+
+/* ==========================================
+   LOADING / EMPTY
+========================================== */
+
+.loading-message {
+    text-align: center;
+
+    padding: 30px;
+
+    color: #94a3b8;
+}
+
+
+.empty-message {
+    text-align: center;
+
+    padding: 40px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+
+    .admin-info {
+        display: none;
+    }
+
+
+    .page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .page-header h1 {
+        font-size: 30px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .brand h2,
+    .brand span {
+        display: none;
+    }
+
+
+    .container {
+        width: 94%;
+
+        padding-top: 30px;
+    }
+
+
+    .form-section,
+    .students-section {
+        padding: 20px;
+    }
+
+}

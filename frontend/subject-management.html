@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Subject Management | AMS</title>
+
+    <link
+        rel="stylesheet"
+        href="css/subject-management.css"
+    >
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                AMS
+            </div>
+
+            <div>
+                <h2>Attendance</h2>
+                <span>MANAGEMENT SYSTEM</span>
+            </div>
+
+        </div>
+
+        <div class="admin-profile">
+
+            <div class="admin-info">
+
+                <span>
+                    Administrator
+                </span>
+
+                <strong id="adminName">
+                    Admin
+                </strong>
+
+            </div>
+
+            <button
+                id="backBtn"
+                class="back-btn"
+            >
+                ← Dashboard
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+        <!-- HEADER -->
+
+        <section class="page-header">
+
+            <span class="section-tag">
+                ACADEMIC MANAGEMENT
+            </span>
+
+            <h1>
+                Subject Management
+            </h1>
+
+            <p>
+                Add, view and manage academic subjects.
+            </p>
+
+        </section>
+
+
+        <!-- ADD SUBJECT -->
+
+        <section class="form-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="section-tag">
+                        ADD SUBJECT
+                    </span>
+
+                    <h2>
+                        Create New Subject
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <form id="subjectForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="subjectCode">
+                            Subject Code
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subjectCode"
+                            placeholder="e.g. CS301"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="subjectName">
+                            Subject Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subjectName"
+                            placeholder="e.g. Data Structures"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="addSubjectBtn"
+                    class="primary-btn"
+                >
+                    Add Subject →
+                </button>
+
+            </form>
+
+
+            <div
+                id="formMessage"
+                class="form-message"
+            ></div>
+
+        </section>
+
+
+        <!-- SUBJECT LIST -->
+
+        <section class="subjects-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <span class="section-tag">
+                        SUBJECT DATABASE
+                    </span>
+
+                    <h2>
+                        All Subjects
+                    </h2>
+
+                </div>
+
+                <button
+                    id="refreshBtn"
+                    class="refresh-btn"
+                >
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Subject Code
+                            </th>
+
+                            <th>
+                                Subject Name
+                            </th>
+
+                            <th>
+                                Created
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="subjectTable">
+
+                        <tr>
+
+                            <td
+                                colspan="5"
+                                class="loading"
+                            >
+                                Loading subjects...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/subject-management.js"></script>
+
+</body>
+
+</html>

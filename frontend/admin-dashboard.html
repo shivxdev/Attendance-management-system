@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Dashboard | Attendance Management System</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                AMS
+            </div>
+
+            <div>
+                <h2>Attendance</h2>
+                <span>MANAGEMENT SYSTEM</span>
+            </div>
+
+        </div>
+
+
+        <div class="admin-profile">
+
+            <div class="admin-info">
+
+                <span class="profile-label">
+                    Administrator
+                </span>
+
+                <strong id="adminName">
+                    Admin
+                </strong>
+
+            </div>
+
+            <button
+                id="logoutBtn"
+                class="logout-btn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="container">
+
+
+        <!-- =====================================
+             WELCOME
+        ====================================== -->
+
+        <section class="welcome-section">
+
+            <span class="section-tag">
+                ADMIN PANEL
+            </span>
+
+            <h1>
+                Welcome,
+                <span id="welcomeAdminName">
+                    Admin
+                </span>
+            </h1>
+
+            <p>
+                Manage students, teachers, classes,
+                subjects and attendance system.
+            </p>
+
+        </section>
+
+
+
+        <!-- =====================================
+             STATISTICS
+        ====================================== -->
+
+        <section class="stats-grid">
+
+
+            <!-- Students -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Students
+                    </span>
+
+                    <strong id="totalStudents">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Teachers -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👨‍🏫
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Teachers
+                    </span>
+
+                    <strong id="totalTeachers">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Classes -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🏫
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Classes
+                    </span>
+
+                    <strong id="totalClasses">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Subjects -->
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Subjects
+                    </span>
+
+                    <strong id="totalSubjects">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             MANAGEMENT
+        ====================================== -->
+
+        <section class="management-section">
+
+            <span class="section-tag">
+                SYSTEM MANAGEMENT
+            </span>
+
+            <h2>
+                Manage System
+            </h2>
+
+            <p class="section-description">
+                Control the major components of the
+                attendance management system.
+            </p>
+
+
+
+            <div class="management-grid">
+
+
+                <!-- =================================
+                     STUDENT MANAGEMENT
+                ================================== -->
+
+                <div class="management-card">
+
+                    <div class="management-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div class="management-content">
+
+                        <h3>
+                            Student Management
+                        </h3>
+
+                        <p>
+                            Add, view and manage
+                            student records.
+                        </p>
+
+                        <button
+                            class="management-btn"
+                            id="studentsBtn"
+                        >
+                            Manage Students →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     TEACHER MANAGEMENT
+                ================================== -->
+
+                <div class="management-card">
+
+                    <div class="management-icon">
+                        👨‍🏫
+                    </div>
+
+                    <div class="management-content">
+
+                        <h3>
+                            Teacher Management
+                        </h3>
+
+                        <p>
+                            Add, view and manage
+                            teacher accounts.
+                        </p>
+
+                        <button
+                            class="management-btn"
+                            id="teachersBtn"
+                        >
+                            Manage Teachers →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     CLASS MANAGEMENT
+                ================================== -->
+
+                <div class="management-card">
+
+                    <div class="management-icon">
+                        🏫
+                    </div>
+
+                    <div class="management-content">
+
+                        <h3>
+                            Class Management
+                        </h3>
+
+                        <p>
+                            Create and manage
+                            college classes.
+                        </p>
+
+                        <button
+                            class="management-btn"
+                            id="classesBtn"
+                        >
+                            Manage Classes →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     SUBJECT MANAGEMENT
+                ================================== -->
+
+                <div class="management-card">
+
+                    <div class="management-icon">
+                        📚
+                    </div>
+
+                    <div class="management-content">
+
+                        <h3>
+                            Subject Management
+                        </h3>
+
+                        <p>
+                            Add and manage
+                            academic subjects.
+                        </p>
+
+                        <button
+                            class="management-btn"
+                            id="subjectsBtn"
+                        >
+                            Manage Subjects →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     ASSIGNMENT MANAGEMENT
+                ================================== -->
+
+                <div class="management-card large-card">
+
+                    <div class="management-icon">
+                        🔗
+                    </div>
+
+                    <div class="management-content">
+
+                        <h3>
+                            Teacher Assignment
+                        </h3>
+
+                        <p>
+                            Assign teachers to specific
+                            classes and subjects.
+                        </p>
+
+                        <button
+                            class="management-btn"
+                            id="assignmentsBtn"
+                        >
+                            Manage Assignments →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     ATTENDANCE OVERVIEW
+                ================================== -->
+
+                <div class="management-card large-card">
+
+                    <div class="management-icon">
+                        📊
+                    </div>
+
+                    <div class="management-content">
+
+                        <h3>
+                            Attendance Overview
+                        </h3>
+
+                        <p>
+                            Monitor overall attendance
+                            across the institution.
+                        </p>
+
+                        <button
+                            class="management-btn"
+                            id="attendanceBtn"
+                        >
+                            View Attendance →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             QUICK ACTIONS
+        ====================================== -->
+
+        <section class="quick-section">
+
+            <span class="section-tag">
+                QUICK ACTIONS
+            </span>
+
+            <h2>
+                Quick Actions
+            </h2>
+
+
+            <div class="quick-grid">
+
+
+                <button
+                    class="quick-card"
+                    id="quickStudent"
+                >
+
+                    <span class="quick-icon">
+                        +
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Add Student
+                        </strong>
+
+                        <small>
+                            Create a new student record
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+
+                <button
+                    class="quick-card"
+                    id="quickTeacher"
+                >
+
+                    <span class="quick-icon">
+                        +
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Add Teacher
+                        </strong>
+
+                        <small>
+                            Create a new teacher account
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+
+                <button
+                    class="quick-card"
+                    id="quickClass"
+                >
+
+                    <span class="quick-icon">
+                        +
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Add Class
+                        </strong>
+
+                        <small>
+                            Create a new class
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+
+                <button
+                    class="quick-card"
+                    id="quickSubject"
+                >
+
+                    <span class="quick-icon">
+                        +
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Add Subject
+                        </strong>
+
+                        <small>
+                            Create a new subject
+                        </small>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/admin-dashboard.js"></script>
+
+</body>
+
+</html>
