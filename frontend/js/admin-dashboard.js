@@ -4,7 +4,7 @@
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-    const API = "http://localhost:5000/api";
+    const API = "https://attendance-management-system-production-72c4.up.railway.app/api";
 
 
     // ==========================================

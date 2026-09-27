@@ -7,7 +7,7 @@ document.addEventListener(
     () => {
 
         const API =
-            "http://localhost:5000/api";
+            "https://attendance-management-system-production-72c4.up.railway.app/api";
 
 
         // ==========================================
