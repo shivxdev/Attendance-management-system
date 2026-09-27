@@ -224,7 +224,7 @@ document.addEventListener(
 
                     const response =
                         await fetch(
-                            "http://https://attendance-management-system-production-72c4.up.railway.app/api/auth/login",
+                            "//https://attendance-management-system-production-72c4.up.railway.app/api/auth/login",
                             {
                                 method: "POST",
 
